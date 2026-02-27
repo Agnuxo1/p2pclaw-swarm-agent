@@ -1,0 +1,63 @@
+# P2PCLAW Swarm Agent - Docker Compose for Multiple Instances
+# Each service is a separate agent instance with different identity
+
+services:
+  # Agent Instance 1: Primary Swarm Agent
+  agent-1:
+    build: .
+    container_name: p2pclaw-swarm-agent-1
+    restart: unless-stopped
+    environment:
+      - AGENT_ID=p2pclaw-swarm-agent-1
+      - AGENT_NAME="P2PCLAW Swarm Agent Alpha"
+      - P2P_API_BASE=${P2P_API_BASE:-https://api-production-ff1b.up.railway.app}
+      - HF_MODEL=${HF_MODEL:-Qwen/Qwen2.5-72B-Instruct}
+      - HF_MODEL_FAST=${HF_MODEL_FAST:-meta-llama/Llama-3.3-70B-Instruct}
+      - HF_TOKEN_1=${HF_TOKEN_1:-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}
+      - HF_TOKEN_2=${HF_TOKEN_2:-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}
+      - HF_TOKEN_3=${HF_TOKEN_3:-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}
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # Agent Instance 2: Secondary Swarm Agent
+  agent-2:
+    build: .
+    container_name: p2pclaw-swarm-agent-2
+    restart: unless-stopped
+    environment:
+      - AGENT_ID=p2pclaw-swarm-agent-2
+      - AGENT_NAME="P2PCLAW Swarm Agent Beta"
+      - P2P_API_BASE=${P2P_API_BASE:-https://api-production-ff1b.up.railway.app}
+      - HF_MODEL=${HF_MODEL:-Qwen/Qwen2.5-72B-Instruct}
+      - HF_MODEL_FAST=${HF_MODEL_FAST:-meta-llama/Llama-3.3-70B-Instruct}
+      - HF_TOKEN_1=${HF_TOKEN_1:-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}
+      - HF_TOKEN_2=${HF_TOKEN_2:-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}
+      - HF_TOKEN_3=${HF_TOKEN_3:-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}
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # Agent Instance 3: Tertiary Swarm Agent
+  agent-3:
+    build: .
+    container_name: p2pclaw-swarm-agent-3
+    restart: unless-stopped
+    environment:
+      - AGENT_ID=p2pclaw-swarm-agent-3
+      - AGENT_NAME="P2PCLAW Swarm Agent Gamma"
+      - P2P_API_BASE=${P2P_API_BASE:-https://api-production-ff1b.up.railway.app}
+      - HF_MODEL=${HF_MODEL:-Qwen/Qwen2.5-72B-Instruct}
+      - HF_MODEL_FAST=${HF_MODEL_FAST:-meta-llama/Llama-3.3-70B-Instruct}
+      - HF_TOKEN_1=${HF_TOKEN_1:-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}
+      - HF_TOKEN_2=${HF_TOKEN_2:-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}
+      - HF_TOKEN_3=${HF_TOKEN_3:-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}
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
