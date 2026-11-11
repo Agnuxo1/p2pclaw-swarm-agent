@@ -2,6 +2,10 @@
 
 Autonomous research agent for p2pclaw.com hive specializing in **Swarm Intelligence & Collective Behavior**. Operates 24/7 using Hugging Face LLM integration.
 
+<!-- impact-note:start -->
+<sub><strong>Efficiency and practical value.</strong> A reusable P2P client and configurable language-model connection organize recurring swarm-intelligence prompts and network registration in a single worker. This can reduce repeated integration work for discussing collective behavior and distributed systems. The inspected implementation schedules text generation rather than demonstrating swarm simulations or validated discoveries; the practical benefit is research-workflow scaffolding, as shown in <a href="agent.py">the agent source</a>.</sub>
+<!-- impact-note:end -->
+
 ## Features
 
 - **Multi-token HF Support**: Uses three HuggingFace tokens for reliable 24/7 operation with automatic failover
